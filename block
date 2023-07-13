@@ -1,0 +1,7 @@
+[1, 2, 3].each { |num| puts num } #Single line Block you are using so that not forget to declare with {} braces
+
+#Multiline block if want to use nessesury to declare object name inside 
+| obj| & make sure your block must end with end block
+[1, 2, 3].each do |num|
+  puts num
+end
