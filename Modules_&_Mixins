@@ -1,0 +1,44 @@
+module  Parent 
+  def parent_name
+    'Mr.Jasvant singh'
+  end
+end
+module  Son 
+  def son_name
+    'Mr.Hemraj'
+  end
+end
+module  Son2 
+  def son_name2
+    'Mr.Bhagirath'
+  end
+end
+module  Daughter 
+  def daughter_name
+    'mis Abhilasha'
+  end
+end
+class Family
+  include Parent
+  include Son
+  include Son2
+  include Daughter
+end 
+obj = Family.new
+puts obj.parent_name
+puts obj.son_name
+puts obj.son_name2
+puts obj.daughter_name
+#When a class can inherit features from more than one parent class,the class is supposed to have multiple 
+#inheritance. But Ruby does not support multiple inheritance directly and instead uses a facility called mixin.
+#Ruby allows modules to access instance methods of another one using include method.
+#A Module is a collection of methods, constants, and class variables. Modules are defined as a class, but with the module keyword not with class keyword.
+
+#Important Points about Modules:
+
+#You cannot inherit modules or you can’t create a subclass of a module.
+#Objects cannot be created from a module.
+#Modules are used as namespaces and as mixins.
+#All the classes are modules, but all the modules are not classes.
+#The class can use namespaces, but they cannot use mixins like modules.
+#The name of a module must start with a capital letter.
