@@ -1,0 +1,16 @@
+#NOTE -> Yield is a Ruby keyword that calls a block when you use it.
+##Every time you call yield, the block will run, so this is like calling the same method again.
+
+
+
+
+def print_twice
+  yield
+  yield
+end
+print_twice { puts "Hello" }
+
+
+output 
+Hello
+Hello
