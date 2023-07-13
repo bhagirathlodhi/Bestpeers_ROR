@@ -1,0 +1,11 @@
+# Lambda function to add 10
+add_10 = lambda { |num| num + 10 }
+# Lambda function to multiply with 2
+multiply_2 = lambda { |num| num * 2 }
+# A Function using lambda
+def using_lambda_with_functions(lambda, number)
+puts lambda.call(number)
+end
+# Passing lambda to function
+using_lambda_with_functions(add_10, 10)
+using_lambda_with_functions(multiply_2, 20)
