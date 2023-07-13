@@ -1,0 +1,16 @@
+class Encapsulation
+
+  #attr_reader :s_roll,:s_name,:s_course,:s_phonenumber,:s_address
+    def initialize(s_roll,s_name,s_course,s_phonenumber,s_address)
+      @s_roll = s_roll
+      @s_name =s_name
+      @s_course =s_course
+      @s_phonenumber = s_phonenumber
+      @s_address = s_address
+   end  
+  def showDetails()
+    puts "Student Rollnumber is #{@s_roll} \n"+"Student name is #{@s_name} \n"+"Student Course is #{@s_course} \n"+"Student Contact number is #{@s_phonenumber} \n"+"Student Home address is #{@s_address} "
+  end 
+end 
+student = Encapsulation.new("101","Bhagirath","Ruby","6260940563","Bhopal")
+student.showDetails
