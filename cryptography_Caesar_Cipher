@@ -1,0 +1,21 @@
+
+def caesar_cipher(str, set)
+  arr = []
+  letter = ('a'..'z').to_a
+  str.each_char do |char|
+    if letter.include?(char)
+      index = letter.index(char)      
+      mod = (index + set).modulo(26)
+      arr << letter[mod]
+    elsif letter.include?(char.downcase)
+      index = letter.index(char.downcase)
+      mod = (index + set).modulo(26)
+      arr << letter[mod].upcase
+    else
+      arr << char
+    end
+  end 
+  return arr.join
+end
+
+puts caesar_cipher("What a string!", 5)
