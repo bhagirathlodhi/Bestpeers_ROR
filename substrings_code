@@ -1,7 +1,7 @@
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
  def substrings(string, dictionary)
   substrings = Hash.new(0)
-  input = string.split(" ")
+  input = string.split(" ")   #spilt(" ") are use to convert string to array example ["Howdy", "partner"]
   
   input.each do |userWord|
     dictionary.each do |word|
