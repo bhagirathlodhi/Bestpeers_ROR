@@ -1,0 +1,19 @@
+class Department
+  def department
+    puts " You are working in ?"
+  end 
+end
+class IT<Department
+  def department_it
+    puts " You are working in IT"
+  end 
+end 
+class Civil<IT
+  def department_c
+    puts " You are working in civil"
+  end 
+end 
+  ob = Civil.new
+  ob.department_c
+ob.department_it
+  ob.department
