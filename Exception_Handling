@@ -1,0 +1,40 @@
+begin
+a = 30
+b = 0
+# here a conditional statement is added
+# to execute only if the statement is true
+ 
+    # raises the exception only if the condition is true
+    raise  ZeroDivisionError.new 'b should not be 0' if b == 0
+    puts a/b
+rescue StandardError => e 
+  puts e.message 
+end
+
+begin
+a = 30
+ 
+# changing the b value, it passes the raise and executes further
+b = 2
+ 
+    # raises the exception only if the condition is true
+    raise  ZeroDivisionError.new 'b should not be 0' if b == 0
+    print "a/b = ", a / b
+rescue StandardError => e 
+   puts e.message 
+end
+
+
+OUTPUT
+b should be note 0
+a/b= 15
+
+
+
+
+
+# raise Statement: This statement is used to raise an exception
+# rescue -> rescue is used  to rescue an exception from.
+It depends on what code you’re running.,it contain parameter as Exception class type
+ # ensure Statement=> it except raise stament out and print it 
+# else Statement: This statement is present in between the rescue block and ensure block. This block only executes when no exception is raised.
