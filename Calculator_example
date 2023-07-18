@@ -1,0 +1,27 @@
+class Clc
+  @result=0
+  def operation(a,b,input)
+    case input
+      when '+'
+        @result = a+b
+      when '-'
+        @result  = a-b 
+      when '/'
+        @result  = a%b 
+      when '*'
+        @result = a*b
+      else
+        return "Please Enter correct Choice"
+    end
+    return @result
+  end
+end
+ob = Clc.new
+puts "Enter Your First number"
+a = gets.chomp.to_i
+puts "Enter Your seond number"
+b = gets.chomp.to_i
+puts "pls Enter +,-,/,*  :......"
+choice  = gets.chomp.to_s
+ans = ob.operation a,b,choice
+puts "Your Answere is : #{ans}"
