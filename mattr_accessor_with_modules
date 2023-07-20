@@ -1,0 +1,9 @@
+require 'active_support/all'  # This is required to use ActiveSupport's mattr_accessor
+
+module MyModule
+  mattr_accessor :my_attribute
+end
+puts MyModule.my_attribute  # Output: nil
+
+MyModule.my_attribute = "Hello, this is a module attribute!"
+puts MyModule.my_attribute  # Output: Hello, this is a module attribute!
