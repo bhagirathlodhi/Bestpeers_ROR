@@ -1,0 +1,37 @@
+require 'active_support/all'
+
+class MyConfiguration
+  # Using mattr_accessor to create class-level getter and setter methods
+  mattr_accessor :api_key
+
+  # You can also set default values for the class-level attribute
+  mattr_accessor :debug_mode, default: false
+
+  # Some other class-level attribute (without a default value)
+  mattr_accessor :max_connections
+
+  # A class-level constant
+  mattr_reader :default_timeout
+  @@default_timeout = 30
+
+  # A class-level method that uses the class-level attribute
+  def self.api_info
+    "API key: #{api_key}, Debug mode: #{debug_mode}, Max connections: #{max_connections}, Default timeout: #{@@default_timeout}"
+  end
+end
+
+# Accessing the class-level attribute and its default value
+puts MyConfiguration.api_key   # Output: nil
+puts MyConfiguration.debug_mode # Output: false
+
+# Modifying the class-level attribute
+MyConfiguration.api_key = "abc123"
+MyConfiguration.debug_mode = true
+
+# Accessing the class-level attribute after modification
+puts MyConfiguration.api_key   # Output: "abc123"
+puts MyConfiguration.debug_mode # Output: true
+
+# Calling the class-level method that uses the class-level attribute
+puts MyConfiguration.api_info
+# Output: "API key: abc123, Debug mode: true, Max connections: , Default timeout: 30"
