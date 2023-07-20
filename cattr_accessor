@@ -1,0 +1,9 @@
+require 'active_support/all'  # This is required to use ActiveSupport's cattr_accessor
+
+class MyClass
+  cattr_accessor :class_attribute
+end
+puts MyClass.class_attribute  # Output: nil
+
+MyClass.class_attribute = "Hello, this is a class attribute!"
+puts MyClass.class_attribute  # Output: Hello, this is a class attribute!
