@@ -1,0 +1,21 @@
+require 'active_support/all'
+
+class MyClass
+  # Using mattr_accessor from ActiveSupport
+  mattr_accessor :class_attribute
+
+  def initialize
+    # Accessing the class attribute inside an instance method
+    puts "Class attribute value: #{self.class.class_attribute}"
+  end
+end
+
+# Accessing the class attribute without creating an instance of the class
+puts MyClass.class_attribute # Output: nil
+
+# Modifying the class attribute without creating an instance of the class
+MyClass.class_attribute = "Hello, World!"
+
+# Creating an instance of MyClass and accessing the class attribute inside the instance method
+instance = MyClass.new
+# Output: "Class attribute value: Hello, World!"
