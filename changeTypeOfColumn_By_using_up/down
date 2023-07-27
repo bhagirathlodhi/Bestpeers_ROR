@@ -1,0 +1,14 @@
+class ChnageTypeOfAttributesUpDown < ActiveRecord::Migration[7.0]
+  def change
+    reversible do |dir|
+      dir.up do
+        change_column :cricketers, :address,:string
+      end
+
+      dir.down do
+          change_column :cricketers, :address,:string
+      end
+    end
+  end
+end
+
