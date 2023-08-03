@@ -1,0 +1,43 @@
+A has_many :through association is often used to set up a many-to-many connection with another model. 
+This association indicates that the declaring model can be matched with zero or more instances of
+another model by proceeding through a third model. 
+
+class Patient < ApplicationRecord
+  has_many :appointments
+  has_many :physicians, through: :appointments
+
+end
+
+
+class Physician < ApplicationRecord
+  has_many :appointments
+  has_many :patients, through: :appointments
+end
+
+
+class Appointment < ApplicationRecord
+  belongs_to :physician
+  belongs_to :patient
+end
+
+
+class CreateAppointments < ActiveRecord::Migration[7.0]
+  def change
+    create_table :physicians do |t|
+      t.string :name
+      t.timestamps
+    end
+
+    create_table :patients do |t|
+      t.string :name
+      t.timestamps
+    end
+
+    create_table :appointments do |t|
+      t.belongs_to :physician
+      t.belongs_to :patient
+      t.datetime :appointment_date
+      t.timestamps
+    end
+  end
+end
